@@ -1,1 +1,1 @@
-This is the README.md file that needs fleshing out.
+- [find-missing-assets.groovy](find-missing-assets.groovy) - this script iterates the items in the filter of a workflow package and outputs the assets or pages that cannot be found in the JCR.
