@@ -9,7 +9,7 @@ def TAGS_PROPERTY = "cq:tags"
 def DEBUG = false
 def SAVE = true 
 
-// Define the query
+// Define the query.
 def start = getNode("/content/dam")
 def query = createXPathQuery(start)
 
@@ -21,24 +21,24 @@ def rows = result.rows
 
 println "Found ${rows.size} result(s)"
 
-// Each row is the asset path
+// Each row is the asset path.
 rows.each 
 { row ->
 
-    // Get the asset node
+    // Get the asset node.
     println "row.path is '${row.path}'"
     def assetNode = row.node
     if (DEBUG) println "assetNode is '${assetNode.path}'" 
     
-    // Get the jcr:content sub-node of the asset
+    // Get the jcr:content sub-node of the asset node.
     def contentNode = assetNode.getNode(javax.jcr.Node.JCR_CONTENT)
     if (DEBUG) println "contentNode is '${contentNode.path}'" 
     
-    // Get the metadata sub-node of the jcr:content
+    // Get the metadata sub-node of the jcr:content node.
     def metadataNode = contentNode.getNode("metadata")
     if (DEBUG) println "metadataNode is '${metadataNode.path}'" 
     
-    // Get the cq:tags property value (should be a String with value surrounded by square brackets [])
+    // Get the cq:tags property value (should be a String with value surrounded by square brackets []).
     def oldTags = metadataNode.get(TAGS_PROPERTY)
     if (DEBUG) println "oldTags is '$oldTags'" 
     
@@ -46,19 +46,19 @@ rows.each
     def tagsString = oldTags[1..-2]
     if (DEBUG) println "tagsString is '$tagsString'" 
     
-    // Convert the string to a String array
+    // Convert the string to a String array.
     def tagsArray = tagsString.split(",")
     if (DEBUG) println "tagsArray is '$tagsArray'" 
     
     if (SAVE) 
     {
-        // Get the cq:tags Property
+        // Get the cq:tags Property object.
         def tagsProperty = metadataNode.getProperty(TAGS_PROPERTY)
         
-        // Remove the existing cq:tags property because it's wrong type (String)
+        // Remove the existing cq:tags property because it's wrong type (String).
         tagsProperty.remove()
         
-        // Set the cq:tags property
+        // Set the cq:tags property.
         metadataNode.set(TAGS_PROPERTY,tagsArray)
     }
 }
@@ -66,10 +66,11 @@ rows.each
 if (SAVE) 
 {
     print "Saving..."
-	// Prevent workflows from being triggered when the asset is modified.
-	session.getWorkspace().getObservationManager().setUserData("changedByWorkflowProcess");
 	
-	// Save the session changes.
+    // Prevent workflows from being triggered when the asset is modified.
+    session.getWorkspace().getObservationManager().setUserData("changedByWorkflowProcess");
+	
+    // Save the session changes.
     save()
     println "Done."
 }
