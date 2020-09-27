@@ -5,4 +5,4 @@ Scripts for ICFNext Groovy console (http://localhost:4502/apps/groovyconsole.htm
 
 This directory contains scripts for the Web Console (http://localhost:4502/system/console/sc).
 
-- [BlobID___Asset_in_AEM_Script.groovy] (BlobID___Asset_in_AEM_Script.groovy) - Prints out path and blob ID under a given path. Optionally, can find the path for a given blob ID.
+- [BlobID___Asset_in_AEM_Script.groovy](BlobID___Asset_in_AEM_Script.groovy) - Prints out path and blob ID under a given path. Optionally, can find the path for a given blob ID.
