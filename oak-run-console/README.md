@@ -25,7 +25,8 @@ rmProperty(session, "/path", "propName")
 
 ## Node Utils
 [nodeUtils.groovy](nodeUtils.groovy)
-Run commands to set a property or remove a property on a node
+
+Run commands to remove or rename a node
 ```
 rmNode(session, "/path/to/nodeToDelete")
 mvNode(session, "/path/to/node", "newNameForNode")
