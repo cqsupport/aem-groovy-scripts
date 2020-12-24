@@ -1,6 +1,4 @@
-# Property Utils
-[propertyUtils.groovy](propertyUtils.groovy)
-
+# Starting oak-run console
 1. Download the oak-run-x.jar file where x matches the version of Oak used on your system: https://repo1.maven.org/maven2/org/apache/jackrabbit/oak-run/
 2. Stop all AEM/Oak instances
 3. Upload the oak-run version to the AEM server if using TarMK or MongoDB server (if using MongoMK) 
@@ -13,9 +11,22 @@
 ```
    java -jar oak-run.jar console mongodb://localhost/aem-author --read-write
 ```
-5. Run commands to set a property or remove a property on a node
+
+# Using scripts:
+## Property Utils
+[propertyUtils.groovy](propertyUtils.groovy)
+
+Run commands to set a property or remove a property on a node
 ```
 :load propertyUtils.groovy
 setProperty(session, "/path", "propName", "propValue", false)
 rmProperty(session, "/path", "propName")
+```
+
+## Node Utils
+[nodeUtils.groovy](nodeUtils.groovy)
+Run commands to set a property or remove a property on a node
+```
+rmNode(session, "/path/to/nodeToDelete")
+mvNode(session, "/path/to/node", "newNameForNode")
 ```
