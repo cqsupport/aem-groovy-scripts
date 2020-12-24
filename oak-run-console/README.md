@@ -1,4 +1,4 @@
-# Starting oak-run console
+# 1. Start oak-run console
 1. Download the oak-run-x.jar file where x matches the version of Oak used on your system: https://repo1.maven.org/maven2/org/apache/jackrabbit/oak-run/
 2. Stop all AEM/Oak instances
 3. Upload the oak-run version to the AEM server if using TarMK or MongoDB server (if using MongoMK) 
@@ -12,7 +12,7 @@
    java -jar oak-run.jar console mongodb://localhost/aem-author --read-write
 ```
 
-# Using scripts:
+# 2. Run the script
 ## Property Utils
 [propertyUtils.groovy](propertyUtils.groovy)
 
