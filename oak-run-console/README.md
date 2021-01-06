@@ -32,4 +32,5 @@ Run commands (in the oak-run console shell) to remove or rename a node
 :load nodeUtils.groovy
 rmNode(session, "/path/to/nodeToDelete")
 mvNode(session, "/path/to/node", "newNameForNode")
+addChildNode(session, "/path/to/node", "newChildNodeName", "nt:unstructured")
 ```
