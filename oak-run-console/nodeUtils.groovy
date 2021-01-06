@@ -43,7 +43,7 @@ def renameNode(def session, String path, String newName) {
 }
 
 def addChildNode(def session, String path, String newChildNodeName, String primaryType) {
-    println "Renaming node from ${path} to ${newName}"
+    println "Adding node ${path}/${newChildNodeName}"
     
     NodeStore ns = session.store
     def nb = ns.root.builder()
