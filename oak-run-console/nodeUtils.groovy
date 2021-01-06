@@ -56,7 +56,7 @@ def addChildNode(def session, String path, String newChildNodeName, String prima
         newNodeBuilder = aBuilder.setChildNode(newChildNodeName);
         newNodeBuilder.setProperty("jcr:primaryType", primaryType, org.apache.jackrabbit.oak.api.Type.NAME,);
         ns.merge(nb, EmptyHook.INSTANCE, CommitInfo.EMPTY)
-        return rn
+        return newNodeBuilder
     } else {
         println "Parent node ${path} doesn't exist"
         return false
