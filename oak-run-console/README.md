@@ -5,7 +5,7 @@
 4. Run this command to start the oak console.
 * on TarMK:
 ```
-   java -jar target/oak-run.jar console --quiet /path/to/segmentstore --read-write
+   java -jar oak-run.jar console --quiet /path/to/segmentstore --read-write
 ```
 * For MongoMK run this:
 ```
