@@ -9,7 +9,7 @@
 //     countNodes(session.workingNode)
 
 // Runs in on-line Groovy console http://localhost:4502/system/console/sc
-// http://felix.apache.org/documentation/subprojects/apache-felix-script-console-plugin.html
+// https://felix.apache.org/documentation/subprojects/apache-felix-web-console.html
 // 1. Web Console Script Console Plugin (which enabled the console at /system/console/sc)
 // 2. Groovy (which installs the Groovy interpreter)
 //
